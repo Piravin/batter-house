@@ -1,0 +1,33 @@
+$light-text : white;
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+    color: $light-text;
+    align-items: center;
+    height: 100px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @media (max-width: 500px){
+        h1{
+            order: 1;
+            width: 100vw;
+            text-align: center;
+            align-items: center;
+        }
+        a{
+            order: 2;
+            h4{
+                font-size: 0.8rem;
+            }
+        }
+        
+    }
+    a {
+        color: $light-text;
+        text-decoration: none;
+        h4 {
+            font-weight: 400;
+        }
+    }
+}

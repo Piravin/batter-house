@@ -1,0 +1,59 @@
+.main {
+    width: 100vw;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    @media(max-width: 720px){
+        padding-top: 5vw;
+        padding-bottom: 0;
+    }
+}
+.selected {
+    scale: 1.2;
+}
+
+.packet {
+    width: 15vw;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    @media (min-width:720px){
+        &:nth-child(2){
+        transform: scale(1.1);
+        };
+        &:nth-child(4){
+            transform: scale(1.1);
+        };
+    };
+    @media (max-width: 720px){
+        width: 30vw;
+        &:nth-child(2){
+            order:1;
+        }
+    }
+}
+
+.modal {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    transform: translateY(100%);
+    transition: transform .3s ease;
+}
+
+.modalEnterDone{
+    transform: translateY(0);
+    transition: transform .3s cubic-bezier(.29,.72,.09,1);
+}
+.modalExitDone{
+    transform: translateY(100%);
+    transition: transform .3s ease;
+}

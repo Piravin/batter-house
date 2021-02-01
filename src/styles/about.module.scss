@@ -1,0 +1,26 @@
+.main{
+    padding: 30px 10vw;
+    align-items: center;
+    align-self: center;
+    color: white;
+    text-align: center;
+    h1{
+        font-family: 'Indie Flower', cursive;
+        font-size: 36px;
+        &::before{
+            content: "";
+            background-color: white;
+            width: 100px;
+            height: 5px;
+            border-radius: 5px;
+        }
+    }
+}
+
+.content{
+    width: 100%;
+    padding-top: 20px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    font-family: 'Architects Daughter', cursive;
+}
