@@ -1,14 +1,101 @@
+@import "variables";
 .main {
-    width: 100vw;
-    height: 0;
-    padding-top: 25%;
-    background-color: black;
+    margin: 50px 10vw;
+    height: 40vh;
+    background-color: rgba(112, 91, 64, 0.507);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    img{
+        width: 90px;
+        height: auto;
+        margin: 50px;
+        transition: transform 0.3s ease,
+                        opacity 0.3s ease;
+    }
+    p{
+        margin: 50px;
+        color: $light-text;
+        font-size: 1.4rem;
+        max-width: 600px;
+        font-family: 'Crafty Girls', sans-serif;
+        transition: transform 0.3s ease,
+                    opacity 0.3s ease;
+    }
     @media(max-width: 1200px){
         height: 40vh;
         padding: 0;
+        margin-left: 50px;
+        margin-right: 50px;
     }
-    @media(max-width: 720px){
-        height: 60vh;
+    @media (max-width: $shift){
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        background-color: $dark-transparant;
+
+        img{
+            margin:10px;
+        }
+        p{
+            margin:10px;
+        }
+    }
+    @media(max-width: $shift-sm){
+        width:100vw;
+        margin: 50px 0;
+        height: 80vh;
         padding:0;
+
     }
 }
+
+.slideEnterimg{
+        transform: translate(-50%,-50%);
+        opacity:0;
+    }
+.slideEnterDoneimg{
+        transform: translate(0,0);
+        opacity:1;
+        transition: transform 0.3s ease,
+                    opacity 0.3s ease;
+    }
+.slideExitimg{
+        transform: translate(0,0);
+        opacity:0.8;
+        transition: opacity 0.2s ease;
+    }
+.slideExitDoneimg{
+        transform: translate(-50%,-50%);
+        opacity:0;
+        transition: transform 0.3s ease,
+                    opacity 0.3s ease;
+    }
+
+.slideEnter{
+        transform: translate(50%,-50%);
+        opacity:0;
+    }
+.slideEnterDone{
+        transform: translate(0,0);
+        opacity:1;
+        transition: transform 0.5s ease,
+                    opacity 0.3s ease;
+    }
+.slideExit{
+        transform: translate(0,0);
+        opacity:0.8;
+        transition: opacity 0.2s ease;
+    }
+.slideExitDone{
+        transform: translate(50%,-50%);
+        opacity:0;
+        transition: transform 0.5s ease,
+                    opacity 0.3s ease;
+    }

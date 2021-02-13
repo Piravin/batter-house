@@ -1,33 +1,120 @@
-$light-text : white;
+@import "variables";
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;  
+    justify-content: space-between;  
     color: $light-text;
     align-items: center;
+    padding:0 10%;
     height: 100px;
     flex-wrap: wrap;
+    position:fixed;
+    width: 100vw;
+    z-index: 20;
+    top:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    @media (max-width: 500px){
-        h1{
-            order: 1;
-            width: 100vw;
-            text-align: center;
-            align-items: center;
+    transition: height 0.5s ease;
+    @media (max-width: 1100px){
+        padding: 0 1vw;
+    }
+    @media(max-width: $shift){
+        justify-content: center;
+        padding:0;
+    }
+}
+
+.logo{
+    width:auto;
+    height:40px;
+    cursor: pointer;
+}
+
+.extra{
+    background-color: $dark-transparant;
+    height: 70px;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease;
+}
+
+.links{
+    display: flex;
+    a{
+        margin: 20px;
+        text-decoration: none;
+        color: $light-text;
+        font-family: 'Crafty Girls', cursive;
+        font-size: 1.1rem;
+        position:relative;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 0px;
+            height:2px;
+            bottom:-10px;
+            left:50%;
+            background: rgb(237,62,191);
+            background: linear-gradient(90deg, rgba(237,62,191,1) 0%, rgba(241,102,34,1) 33%, rgba(238,61,35,1) 100%);
         }
-        a{
-            order: 2;
-            h4{
-                font-size: 0.8rem;
+        &:hover{
+            color: $bg-color;
+            &::after{
+                width:100%;
+                transform: translateX(-50%);
+                transition: width 0.2s ease;
             }
         }
-        
     }
-    a {
-        color: $light-text;
-        text-decoration: none;
-        h4 {
-            font-weight: 400;
-        }
+    
+}
+.navLinks{
+    @media (max-width: $shift){
+        display: none;
+    }
+}
+
+.sidebar{
+    position: fixed;
+    min-width: 50vw;
+    height: 100vh;
+    width:auto;
+    background-color: $dark;
+    z-index: 30;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    div{
+        padding-top: 10vh;
+        height: 90vh;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.sidebarEnter{
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.ham{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 15px;
+    width: 70px;
+    height: 70px;
+    background-color: $dark-transparant;
+    backdrop-filter: blur(20px);
+    z-index: 50;
+    border: none;
+    &:focus{
+        outline: 0;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+    }
+    @media (min-width: $shift){
+        display: none;
     }
 }

@@ -1,5 +1,12 @@
 let content: any = {
-    about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+    about: {
+        h: "Know Us",
+        p:[
+            "Founded by 4 home makers with a vision in  ensuring their family to a healthy food style was the inspiration behind the creation of Batter house. Learning from authentic and traditional methods and process  across various remote locations in South India we have  arrived a vast variety of Idlis & Dosa batter for a better and  healthy generation.",
+            "Our recipes are unique and authentic to ensure that  it is best for your health, making your taste buds happy too.",
+            "We have made extensive research and travel to identify and select the best for you"
+        ]
+    }
 };
 
 export default content;

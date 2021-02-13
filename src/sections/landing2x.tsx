@@ -3,12 +3,14 @@ import Landing from './landing';
 
 const Landing2x: FC = () => {
     return(
-        <div style={{
+        <section style={{
             height: "200vh",
-            position: "relative"
+            position: "relative",
+            padding: "100px 0",
+            margin: "0"
         }}>
             <Landing/>
-        </div>
+        </section>
     );
 }
 

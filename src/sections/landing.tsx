@@ -5,6 +5,8 @@ import Slides from '../components/slides';
 import ProductContextProvider from '../contexts/product';
 import Styles from '../styles/landing.module.scss';
 
+const bg = require('../images/landing-bg.svg');
+
 const Landing: FC = () => {
     const section = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
@@ -20,7 +22,7 @@ const Landing: FC = () => {
        return () => window.removeEventListener("scroll", sectionEjector);
     },[]);
     return (
-        <section className={Styles.main} ref={section}>
+        <section className={Styles.main} ref={section} style={{background: `url(${bg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
             <Header/>
             <Slides/>
             <ProductContextProvider>
