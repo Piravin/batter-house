@@ -16,6 +16,7 @@
     transition: height 0.5s ease;
     @media (max-width: 1100px){
         padding: 0 1vw;
+        padding-right: 150px;
     }
     @media(max-width: $shift){
         justify-content: center;
@@ -25,13 +26,15 @@
 
 .logo{
     width:auto;
-    height:40px;
+    height:70px;
     cursor: pointer;
 }
 
 .extra{
     background-color: $dark-transparant;
-    height: 70px;
+    height: 80px;
+    padding-top:0;
+    padding-bottom: 0;
     backdrop-filter: blur(10px);
     transition: 0.5s ease;
 }
@@ -83,7 +86,7 @@
     transition: transform 0.3s ease;
 
     div{
-        padding-top: 10vh;
+        padding-top: 100px;
         height: 90vh;
         flex-direction: column;
         justify-content: space-around;
@@ -117,4 +120,37 @@
     @media (min-width: $shift){
         display: none;
     }
+}
+
+.lang{
+    position: absolute;
+    top:10px;
+    right: 50px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Dawning of a New Day', cursive;
+    background-color: transparent;
+    color: aliceblue;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 4px 8px 15px rgba(209, 115, 27, 0.568),
+                -2px 0px 5px rgba(209, 115, 27, 0.568);
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+    @media (max-width: 720px){
+        right: 10px;
+    }
+}
+.lang:hover{
+    background-color: $bg-color;
+    color: black;
+    transition: background-color 0.3s ease,
+               color 0.3s ease;
+}
+.lang:focus{
+    outline:none;
 }

@@ -6,6 +6,7 @@ import ProductContextProvider from '../contexts/product';
 import Styles from '../styles/landing.module.scss';
 
 const bg = require('../images/landing-bg.svg');
+const board = require('../images/board.png');
 
 const Landing: FC = () => {
     const section = useRef<HTMLDivElement | null>(null);
@@ -25,6 +26,7 @@ const Landing: FC = () => {
         <section className={Styles.main} ref={section} style={{background: `url(${bg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
             <Header/>
             <Slides/>
+            <img src={board} alt={"Batter House Board"} className={Styles.board}/>
             <ProductContextProvider>
                 <Products/>
             </ProductContextProvider>

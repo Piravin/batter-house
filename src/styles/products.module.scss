@@ -6,36 +6,23 @@
     flex-direction: row;
     align-items: flex-end;
     padding-bottom: 50px;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     @media(max-width: $shift-sm){
         padding-top: 5vw;
-        padding-bottom: 0;
+        padding-bottom: 10px;
     }
-}
-.selected {
-    scale: 1.2;
 }
 
 .packet {
-    width: 15vw;
+    width: 10vw;
     max-width: 200px;
     height: auto;
     cursor: pointer;
     z-index: 10;
-    @media (min-width:$shift-sm){
-        &:nth-child(2){
-        transform: scale(1.1);
-        };
-        &:nth-child(4){
-            transform: scale(1.1);
-        };
-    };
+    margin: 0 3vw;
     @media (max-width: $shift-sm){
-        width: 25vw;
-        &:nth-child(2){
-            order:1;
-        }
+        width: 15vw;
         margin:10px;
         align-items: center;
     }

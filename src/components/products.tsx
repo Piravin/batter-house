@@ -3,17 +3,22 @@ import Styles from '../styles/products.module.scss';
 import { ProductContext, ProductContextI } from '../contexts/product';
 import {CSSTransition} from 'react-transition-group';
 
-const PacketImage = require('../images/packet.svg');
+const PacketImage = [
+    require('../images/packet-brown.png'),
+    require('../images/packet-green.png'),
+    require('../images/packet-blue.png'),
+];
 
 interface PacketProps {
     selected?: boolean;
+    number: number
 }
 
-const Packet: FC<PacketProps> = ({selected}) => {
+const Packet: FC<PacketProps> = ({selected, number}) => {
 
     return (
         <img
-         src={PacketImage}
+         src={PacketImage[number]}
          style={selected? {transform: "scale(1.2)"} : {}}
          className={Styles.packet}
          />
@@ -59,11 +64,9 @@ const Products: FC = () => {
         <>
         <PacketModal/>
         <div className={Styles.main}>
-            <Packet selected={values?.selected === 0 ? true : false}/>
-            <Packet selected={values?.selected === 1 ? true : false}/>
-            <Packet selected={values?.selected === 2 ? true : false}/>
-            <Packet selected={values?.selected === 3 ? true : false}/>
-            <Packet selected={values?.selected === 4 ? true : false}/>
+            <Packet selected={values?.selected === 0 ? true : false} number={0}/>
+            <Packet selected={values?.selected === 1 ? true : false} number={1}/>
+            <Packet selected={values?.selected === 2 ? true : false} number={2}/>
         </div>
         </>
     );
