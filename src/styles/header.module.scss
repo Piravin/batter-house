@@ -8,8 +8,9 @@
     padding:0 10%;
     height: 100px;
     flex-wrap: wrap;
-    position:fixed;
+    position:fixed!important;
     width: 100vw;
+    max-width: 100%;
     z-index: 20;
     top:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,13 +36,15 @@
     height: 80px;
     padding-top:0;
     padding-bottom: 0;
-    backdrop-filter: blur(10px);
     transition: 0.5s ease;
+    backdrop-filter: blur(10px);
 }
 
 .links{
     display: flex;
-    a{
+    li{
+        list-style: none;
+        cursor: pointer;
         margin: 20px;
         text-decoration: none;
         color: $light-text;
@@ -106,7 +109,7 @@
     padding: 15px;
     width: 70px;
     height: 70px;
-    background-color: $dark-transparant;
+    background-color: transparent;
     backdrop-filter: blur(20px);
     z-index: 50;
     border: none;

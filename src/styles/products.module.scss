@@ -1,4 +1,5 @@
 @import "variables";
+$prod-switch: 870px;
 .main {
     width: 100vw;
     flex-grow: 1;
@@ -16,7 +17,7 @@
 
 .packet {
     width: 10vw;
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
     cursor: pointer;
     z-index: 10;
@@ -25,6 +26,26 @@
         width: 15vw;
         margin:10px;
         align-items: center;
+    }
+    &:hover{
+        animation: wobble 0.3s ease;
+    }
+}
+@keyframes wobble{
+    0%{
+        transform: scaleX(1.1)
+    }
+    25%{
+        transform: scaleX(0.9)
+    }
+    50%{
+        transform: scaleX(1.1)
+    }
+    75%{
+        transform: scaleX(0.9)
+    }
+    100%{
+        transform: scaleX(1)
     }
 }
 
@@ -47,4 +68,84 @@
 .modalExitDone{
     transform: translateY(100%);
     transition: transform .3s ease;
+}
+
+.revealer{
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    max-height: 70vh;
+    @media(max-width: $prod-switch){
+        justify-content: flex-end;
+        padding: 100px 5vw;
+    }
+}
+
+.image{
+    img{
+        max-width: 400px;
+    }
+    padding: 20px;
+    margin: 20px;
+    @media(max-width: $prod-switch){
+        img{
+            width: 200px;
+        }
+    }
+
+}
+
+.detail{
+    width: 40vw;
+    margin:20px;
+    padding: 20px;
+    max-width: 700px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.801);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    text-align: justify;
+    line-height: 2rem;
+    font-size: 1.3rem;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: wheat;
+        bottom: -50px;
+        right: -10px;
+        border-radius: 50%;
+       background-color: rgba(255, 255, 255, 0.801);
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: wheat;
+        bottom: -80px;
+        right: -15px;
+        border-radius: 50%;
+       background-color: rgba(255, 255, 255, 0.801);
+    }
+    @media(max-width: $prod-switch){
+        width: 80vw;
+        margin-bottom: 100px;
+        &::after{
+            right: 35%;
+        }
+        &::before{
+            right:40%;
+        }
+    }
+    @media(max-width: 600px){
+        width: 80vw;
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
 }

@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import Styles from '../styles/slides.module.scss';
+import {gsap, Elastic} from 'gsap';
 
 const slideLs = [
     require("../images/slide1.png"),
@@ -23,28 +24,51 @@ const Slides: FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            nodeRef.current!.classList.add(Styles.slideExitDoneimg);
-            nodeRef2.current!.classList.add(Styles.slideExitDone);
-            setTimeout(()=>{
-                nodeRef.current!.classList.remove(Styles.slideExitDoneimg);
-                nodeRef2.current!.classList.remove(Styles.slideExitDone);
-                setSlideR((slideR + 1)%3);
-                setSlideL((slideL + 1)%3);
-                setTimeout(()=>{
-                    nodeRef.current!.classList.add(Styles.slideEnterDoneimg)
-                    nodeRef2.current!.classList.add(Styles.slideEnterDone)
-                    setTimeout(() => {
-                        nodeRef.current!.classList.remove(Styles.slideEnterDoneimg);
-                        nodeRef2.current!.classList.remove(Styles.slideEnterDone);
-                    },600)
-                },600);
-            },600);
-        },3000)
+            let tl = gsap.timeline({});
+            tl.to(nodeRef.current,{
+                y: -100,
+                x: -100,
+                opacity: 0
+            });
+            tl.call(() => setSlideL((slideL + 1)%3));
+            tl.from(nodeRef.current,{
+                x: 100,
+                y: 100,
+                scale:0,
+                opacity:0,
+                ease: Elastic.easeInOut,
+            }, "+=0.5");
+            tl.to(nodeRef2.current,{
+                y: -100,
+                x: 100,
+                opacity: 0
+            },0);
+            tl.call(() => setSlideR((slideR + 1)%3));
+            tl.from(nodeRef2.current,{
+                x: -100,
+                y: 100,
+                scale:0,
+                opacity:0,
+                ease: Elastic.easeInOut,
+            }, "-=0.5");
+            
+        },5000);
         return () => clearInterval(interval);
-    },[slideL]);
+    },[slideL, slideR]);
 
+    // GSAP
+    const slide = useRef<HTMLDivElement | null>(null);
+    useEffect(() => {
+        gsap.from(
+            slide.current,
+            {
+                rotationX: 120,
+                delay: 0.3
+            }
+        )
+    },[])
     return (
-        <div className={Styles.main}>
+        <div className={Styles.main} ref={slide}>
             <img ref={nodeRef} src={slideLs[slideL]} alt={`slide${slideL}`}/>
             <p ref={nodeRef2}>{slideRs[slideR]}</p>
         </div>

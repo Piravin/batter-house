@@ -3,15 +3,15 @@ export const content: any = {
         "சமையல் புத்தகம்",
         "கண்டுபிடிப்புகள்",
         "தூதர்",
-        "தொடர்பு",
-        "பற்றி"
+        "பற்றி",
+        "தொடர்பு"
     ],
     english: [
         "Cook Book",
         "Discoveries",
         "Ambassadors",
-        "Contact",
-        "About"
+        "About",
+        "Contact"
     ]
 }
 export default content;

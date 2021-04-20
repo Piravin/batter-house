@@ -1,7 +1,8 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useRef, useState } from 'react';
 import Styles from '../styles/products.module.scss';
 import { ProductContext, ProductContextI } from '../contexts/product';
 import {CSSTransition} from 'react-transition-group';
+import {gsap} from 'gsap';
 
 const PacketImage = [
     require('../images/packet-brown.png'),
@@ -10,17 +11,31 @@ const PacketImage = [
 ];
 
 interface PacketProps {
-    selected?: boolean;
-    number: number
+    selected: boolean;
+    number: number;
 }
 
-const Packet: FC<PacketProps> = ({selected, number}) => {
+const Packet: FC<PacketProps> = ({ selected, number}) => {
+
+    const packet = useRef<HTMLImageElement | null>(null)
+    useEffect(() => {
+        gsap.from(
+            packet.current,
+            {
+                scale: 0.6,
+                delay: 0.5,
+                opacity:0
+            }
+        )
+    },[]);
+
+    const values = useContext<ProductContextI | null>(ProductContext);
 
     return (
         <img
+         ref={packet}
          src={PacketImage[number]}
-         style={selected? {transform: "scale(1.2)"} : {}}
-         className={Styles.packet}
+         className={`${Styles.packet} ${selected && values!.modal ? Styles.selected : ''}`}
          />
     );
 }
@@ -32,6 +47,15 @@ const PacketModal: FC = () => {
         let modalOpener = () => {
             if(window.pageYOffset > window.innerHeight/4 && window.pageYOffset > lastScroll){
                 values?.setModal(true);
+            }
+            if(window.pageYOffset < window.innerHeight && window.pageYOffset > lastScroll){
+                values?.setSelected(0);
+            }
+            if(window.pageYOffset > window.innerHeight + window.innerHeight/4 && window.pageYOffset > lastScroll){
+                values?.setSelected(1);
+            }
+            if(window.pageYOffset > 2 * window.innerHeight + window.innerHeight/4 && window.pageYOffset > lastScroll){
+                values?.setSelected(2);
             }
             if(window.pageYOffset < lastScroll+(window.innerHeight/4) && window.pageYOffset < window.innerHeight/4){
                 values?.setModal(false);
@@ -52,7 +76,14 @@ const PacketModal: FC = () => {
             
             >
         <div className={Styles.modal}>
-
+            <div className={Styles.revealer}>
+                <div className={Styles.detail}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus autem officia voluptate nam blanditiis libero, quam aut illo perferendis sapiente quia error esse enim perspiciatis, beatae eaque corrupti maiores quas!
+                </div>
+                <div className={Styles.image}>
+                    <img src={PacketImage[values!.selected]} alt="packet"/>
+                </div>
+            </div>
         </div>
         </CSSTransition>
     );
@@ -60,6 +91,7 @@ const PacketModal: FC = () => {
 
 const Products: FC = () => {
     const values = useContext<ProductContextI | null>(ProductContext);
+
     return(
         <>
         <PacketModal/>

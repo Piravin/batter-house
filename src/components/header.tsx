@@ -1,7 +1,15 @@
+// Core
 import React, {FC, useEffect, useRef, useState, useContext} from "react";
+
+// Styles
 import Styles from "../styles/header.module.scss";
 import {CSSTransition} from "react-transition-group";
+
+// Contexts
 import {LanguageContext} from '../contexts/language';
+import NavContext from "../contexts/navigation";
+
+// Contents
 import content from '../contents/links';
 
 const Logo = require("../images/logo.svg");
@@ -9,12 +17,37 @@ const Ham = require("../images/ham.svg");
 const Hamx = require("../images/hamx.svg");
 
 export const Links: FC = () => {
+
+  // Language
   const lang = useContext(LanguageContext);
   const contents = lang!.language ? content.tamil : content.english;
+
+  // Navigation
+  const nav = useContext(NavContext);
+  const scroller = (id: number) => {
+    switch (id){
+      case 0:
+        window.scrollTo(0, nav!.cookbook);
+        break;
+      case 1:
+        break;
+      case 2:
+        window.scrollTo(0, nav!.ambassador);
+        break;
+      case 3:
+        window.scrollTo(0, nav!.about);
+        break;
+      case 4:
+        window.scrollTo(0, nav!.footer);
+        break;
+      default:
+        window.scrollTo(0,0);
+    }
+  }
   return (
     <div className={Styles.links}>
-      {contents.map( (data: string) => (
-        <a href={`#${data}`}>{data}</a>
+      {contents.map( (data: string, id: number) => (
+        <li onClick={() => scroller(id)}>{data}</li>
       ))}
     </div>
   );
