@@ -15,6 +15,8 @@
     top:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: height 0.5s ease;
+    background-color: $dark-transparant;
+
     @media (max-width: 1100px){
         padding: 0 1vw;
         padding-right: 150px;
@@ -32,7 +34,6 @@
 }
 
 .extra{
-    background-color: $dark-transparant;
     height: 80px;
     padding-top:0;
     padding-bottom: 0;

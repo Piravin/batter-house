@@ -43,7 +43,7 @@ const Footer: FC = () => {
                     <img src={pin} alt="Address" height="30px" width="25px"/>
                     <p>
                     {contents.address.map((line:string) => (
-                        <p>{line}</p>
+                        <>{line}</>
                     ))}
                     </p>
                 </div>

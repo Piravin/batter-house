@@ -10,9 +10,9 @@ let content: any = {
     english: {
         h: "Know Us",
         p:[
-            "Founded by 4 home makers with a vision in  ensuring their family to a healthy food style was the inspiration behind the creation of Batter house. Learning from authentic and traditional methods and process  across various remote locations in South India we have  arrived a vast variety of Idlis & Dosa batter for a better and  healthy generation.",
-            "Our recipes are unique and authentic to ensure that  it is best for your health, making your taste buds happy too.",
-            "We have made extensive research and travel to identify and select the best for you"
+            "Nestled in the “Manchester of the South” – Coimbatore, Batter House, is a fusion of minds of four young women entrepreneurs, who vow to bring back  healthy foods, proven through ages on your dining table. The benefits are time tested and hold the key to  healthy living and healthy families. Harnessed from trusted Organic partners and with No Preservatives being added, Batter House brings to you “Nature” at its best.",
+            "Carefully processed in traditional methods to preserve and protect the nutrient value and health quotient, Batter House brings the celebration of the festival of life at your door step. The Force of Four are a beacon of hope for many such women entrepreneurs who use the goodness of Batter House  to create varied cuisine for their customers thereby shouldering responsibilities of their families and creating a self reliant and forward looking society.",
+            "Every pack of Batter House brings with it good health, long life and a million smiles. That is a promise of Force of Four…The 3H secret is in every pack of Batter House – Healthy Happy Home."
         ]
     }
 };

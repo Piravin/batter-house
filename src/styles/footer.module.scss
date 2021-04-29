@@ -10,6 +10,7 @@ $foot-bg: rgb(29, 29, 29);
     justify-content: space-between;
     flex-wrap: wrap;
     position:relative;
+    scroll-snap-align: start;
     &::before{
         content: "";
         background: rgb(237,62,191);
@@ -20,7 +21,15 @@ $foot-bg: rgb(29, 29, 29);
         top:0;
         height:1px;
     }
+    @media(max-width: $shift){
+        padding: 50px 0;
+        p{
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+    }
 }
+
 .link{
     padding: 20px;
     align-items: center;
@@ -82,7 +91,7 @@ $foot-bg: rgb(29, 29, 29);
     align-items: flex-start;
     justify-content: space-around;
     div{
-        margin: 10px 0;
+        margin: 10px 10px;
         display: flex;
         img{
             margin: 5px 20px;
@@ -91,6 +100,7 @@ $foot-bg: rgb(29, 29, 29);
     }
     @media (max-width: 800px){
         width:auto;
+        padding: 0;
     }
 }
 

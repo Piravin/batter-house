@@ -11,9 +11,9 @@ let content = {
     },
     english:{
         address:[
-            "7/165, Kovil Thottam",
-            "Keeranatham Pudhupalayam",
-            "Keeranatham",
+            "7/165, Kovil Thottam, ",
+            "Keeranatham Pudhupalayam, ",
+            "Keeranatham, ",
             "Coimbatore - 641 035"
         ],
         mobile: "+91 93444 82696",

@@ -1,24 +1,38 @@
+@import "variables";
 .main {
     height: 100vh;
     width: 100vw;
     max-width: 100%;
+    position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding-top: 100px;
-    background: linear-gradient(180deg, rgba(141, 90, 48, 0.705) 0%, rgb(177, 102, 53) 90%);
-    box-shadow: inset -5px -30px 40px rgba(0, 0, 0, 0.712);
+    background-color: $bg-color;
 }
-.board{
+.hero{
     position: absolute;
-    bottom: 20px;
-    right: 50px;
-    height: 250px;
-    @media (max-width:1000px){
-        display: none;
+    right: 150px;
+    bottom: 100px;
+    img {
+        width: auto;
+        height: 300px;
+    }
+    @media(max-width: 1200px) {
+        right: 100px;
+        img {
+            width:auto;
+            height: 220px;
+        }
+    }
+    @media(max-width: $shift-sm){
+        right: 50px;
+        bottom: 50px;
+        img {
+            height: 15vh;
+        }
     }
 }

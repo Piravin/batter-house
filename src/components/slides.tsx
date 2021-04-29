@@ -3,9 +3,9 @@ import Styles from '../styles/slides.module.scss';
 import {gsap, Elastic} from 'gsap';
 
 const slideLs = [
-    require("../images/slide1.png"),
-    require("../images/slide2.png"),
-    require("../images/slide3.png")
+    require("../images/slide1.jpeg"),
+    require("../images/slide2.jpeg"),
+    require("../images/slide3.jpeg")
 ]
 
 const slideRs = [

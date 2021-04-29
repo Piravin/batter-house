@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=La+Belle+Aurore&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +15,11 @@
     scroll-behavior: smooth;
 }
 body {
-    background-color: #F7941E;
+    background-color: #ffa33b;
     min-height: 300vh;
     max-width: 100vw;
     box-sizing: border-box;
     overflow-x: hidden;
     position: relative;
+    scroll-snap-type: mandatory;
 }

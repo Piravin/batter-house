@@ -4,7 +4,7 @@ import Landing from './landing';
 const Landing2x: FC = () => {
     return(
         <section style={{
-            height: "400vh",
+            height: "100vh",
             position: "relative",
             padding: "100px 0",
             margin: "0"

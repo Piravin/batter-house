@@ -5,7 +5,8 @@ import React, { FC } from 'react';
 import "../styles/index.scss";
 
 // Sections
-import Landing2x from '../sections/landing2x';
+import Landing from '../sections/landing';
+import Vision from '../sections/vision';
 import About from '../sections/about';
 import Footer from '../sections/footer';
 import SEO from '../components/seo';
@@ -25,7 +26,8 @@ const IndexPage: FC = () => {
                 <NavContextProvider>
                     <SEO title="Batter House"/>
                     <Header/>
-                    <Landing2x/>
+                    <Landing/>
+                    <Vision/>
                     <Cookbook/>
                     <Ambassador/>
                     <About/>

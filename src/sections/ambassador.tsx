@@ -52,8 +52,8 @@ const Ambassador: FC = () => {
         });
         gsap.from(ambassador.current,{
             scrollTrigger: {
-                trigger: ambassador.current!,
-                start: "top 90%",
+                trigger: p.current!,
+                start: "top 50%",
                 toggleActions: 'play none none reverse'
             },
             x:-30,
