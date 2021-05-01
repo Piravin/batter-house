@@ -1,15 +1,13 @@
 @import "variables";
 .main {
     height: 50vh;
-    backdrop-filter: blur(10px);
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    padding-left: 200px;
     img{
         width: 150px;
         height: auto;
@@ -22,7 +20,7 @@
     }
     p{
         margin: 50px;
-        color: black;
+        color: rgb(255, 255, 255);
         font-size: 2rem;
         font-weight: 700;
         max-width: 600px;
@@ -36,8 +34,6 @@
     @media(max-width: 1200px){
         height: 40vh;
         padding: 0;
-        margin-left: 50px;
-        margin-right: 50px;
         justify-content: center;
     }
     @media (max-width: $shift){
@@ -99,3 +95,18 @@
         transition: transform 0.5s ease,
                     opacity 0.3s ease;
     }
+
+.window {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(248, 153, 44);
+    box-shadow: 2px 3px 20px 8px rgba(0, 0, 0, 0.1);
+    @media (max-width:1200px){
+        width: 100%;
+        height: auto;
+    }
+}

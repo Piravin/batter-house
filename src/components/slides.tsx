@@ -69,8 +69,10 @@ const Slides: FC = () => {
     },[])
     return (
         <div className={Styles.main} ref={slide}>
-            <img ref={nodeRef} src={slideLs[slideL]} alt={`slide${slideL}`}/>
-            <p ref={nodeRef2}>{slideRs[slideR]}</p>
+            <div className={Styles.window}>
+                <img ref={nodeRef} src={slideLs[slideL]} alt={`slide${slideL}`}/>
+                <p ref={nodeRef2}>{slideRs[slideR]}</p>
+            </div>
         </div>
     );
 }

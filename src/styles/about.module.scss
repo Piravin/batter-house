@@ -5,7 +5,7 @@
     align-self: center;
     min-height: 100vh;
     color: rgb(206, 206, 205);
-    background-color: $dark;
+    background-color: #3c354e;
     text-align: center;
     scroll-snap-type: mandatory;
     display: flex;
@@ -41,7 +41,7 @@
     line-height: 3rem;
     font-family: 'Crafty Girls', sans-serif;
     @media (max-width: 720px) {
-        font-size: 1.3rem;
+        font-size: 20px;
         text-align: justify;
         text-indent: 1rem;
     }

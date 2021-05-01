@@ -12,12 +12,15 @@ import Footer from '../sections/footer';
 import SEO from '../components/seo';
 import Cookbook from '../sections/cookbook';
 import Ambassador from '../sections/ambassador';
+import Products from '../sections/products';
+import Feedback from '../sections/feedback';
 
 // Contexts
 import LanguageProvider from '../contexts/language';
 import {NavContextProvider} from '../contexts/navigation';
 
 import Header from '../components/header';
+
 
 const IndexPage: FC = () => {
     return (
@@ -28,7 +31,9 @@ const IndexPage: FC = () => {
                     <Header/>
                     <Landing/>
                     <Vision/>
+                    <Products/>
                     <Cookbook/>
+                    <Feedback/>
                     <Ambassador/>
                     <About/>
                     <Footer/>

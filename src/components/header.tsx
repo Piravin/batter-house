@@ -30,6 +30,7 @@ export const Links: FC = () => {
         window.scrollTo(0, nav!.cookbook);
         break;
       case 1:
+        window.scrollTo(0, nav!.products - 100);
         break;
       case 2:
         window.scrollTo(0, nav!.ambassador);

@@ -8,7 +8,7 @@ export const content: any = {
     ],
     english: [
         "Cook Book",
-        "Discoveries",
+        "Products",
         "Ambassadors",
         "About",
         "Contact"
